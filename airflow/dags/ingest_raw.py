@@ -1,4 +1,5 @@
 from datetime import datetime
+from urllib.parse import urlparse
 
 import requests
 
@@ -13,9 +14,7 @@ SOURCE_URL = (
     "ml/machine-learning-databases/00560/SeoulBikeData.csv"
 )
 
-SOURCE_ENDPOINT = (
-    "/ml/machine-learning-databases/00560/SeoulBikeData.csv"
-)
+SOURCE_ENDPOINT = urlparse(SOURCE_URL).path
 
 FILE_NAME = "SeoulBikeData.csv"
 DATASET_SLUG = "seoul-bike-sharing-demand"
