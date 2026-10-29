@@ -86,9 +86,10 @@ def load_to_raw(
 
 with DAG(
     dag_id="ingest_raw",
-    start_date=datetime(2026, 9, 1),
-    schedule=None,
-    catchup=False,
+    start_date=datetime(2026, 9, 30),
+    end_date=datetime(2026, 9, 30),
+    schedule="@daily",
+    catchup=True,
     tags=["lab-02"],
 ) as dag:
 
